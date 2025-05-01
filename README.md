@@ -1,3 +1,34 @@
+# Technologies
+
+## NextJS
+- Easy to setup and start
+- More experience with
+- Easy deploy with vercel for POCs.
+- Use the template as layout easily.
+- Contains a mdx (https://mdxjs.com/) package (https://nextjs.org/docs/app/guides/mdx).
+
+### NextJs + App router
+- SSR and SSG is perfect for the requirements of the project and better for the SEO.
+
+## TypeScript
+- More secure because of type validation
+
+## Markdown to JSX
+- secure of XSS (cross side scripting) (not dangerouslySetInnerHTML https://legacy.reactjs.org/docs/dom-elements.html)
+- based on simple markdown, other open source project (https://www.npmjs.com/package/@khanacademy/simple-markdown)
+- complete and easy to read documentation
+- easy to use
+- light and trustable with lot of weekly downloads (>3M) (more community using it, more trouble shooting and support you will find)
+
+Discarded: https://www.npmjs.com/package/react-markdown is lighter and has more weekly downloads (>4M), but the doc is more hard to read and has more costomizations that are not necessary here and just add compley to use it in this case
+
+
+-----
+
+ruta dinamica y cuando obtengo el valor dinamico voy a esa carpeta en content a buscar el md, lo leo y lo muestro
+
+------
+
 # Static Content challenge
 
 **NB: Please do not fork this repository, to avoid your solution being visible from this repository's GitHub page. Please clone this repository and submit your solution as a separate repository.**
