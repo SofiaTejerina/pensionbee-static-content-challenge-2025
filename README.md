@@ -2,7 +2,8 @@
 
 ## NextJS
 - Easy to setup and start
-- More experience with
+- Easy to work with dynamic routes. https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
+- More experience with.
 - Easy deploy with vercel for POCs.
 - Use the template as layout easily.
 - Contains a mdx (https://mdxjs.com/) package (https://nextjs.org/docs/app/guides/mdx).
