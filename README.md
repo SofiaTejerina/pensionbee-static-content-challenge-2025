@@ -19,16 +19,17 @@
 - based on simple markdown, other open source project (https://www.npmjs.com/package/@khanacademy/simple-markdown)
 - complete and easy to read documentation
 - easy to use
-- light and trustable with lot of weekly downloads (>3M) (more community using it, more trouble shooting and support you will find)
+- light and trustable with lot weekly downloads (>3M) (more community using it, more trouble shooting and support you will find)
 
 Discarded: https://www.npmjs.com/package/react-markdown is lighter and has more weekly downloads (>4M), but the doc is more hard to read and has more costomizations that are not necessary here and just add compley to use it in this case
 
 
------
+## SSG
 
-ruta dinamica y cuando obtengo el valor dinamico voy a esa carpeta en content a buscar el md, lo leo y lo muestro
+To use SSG to better the SEO and performance, I need a backend to read the folders and return all the posible paths with that create the `generateStaticParams`.
 
-------
+## Components
+- ClientMDX: to isolate the client component, this component is client because the mdx package use hooks like useContext to generate the React component from the markdown.
 
 # Static Content challenge
 
