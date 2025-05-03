@@ -31,6 +31,20 @@ To use SSG to better the SEO and performance, I need a backend to read the folde
 ## Components
 - ClientMDX: to isolate the client component, this component is client because the mdx package use hooks like useContext to generate the React component from the markdown.
 
+## Testing
+### Jest
+- As a test framework.
+- Because I found that all the blogs I read to do the tests use jest https://jestjs.io/
+- My only experience doing test on React was using jest.
+
+### React testing library
+- To use with Jest.
+- Library to test react component throw the DOM https://testing-library.com/docs/react-testing-library/intro/
+
+### Setup:
+https://nextjs.org/docs/app/guides/testing/jest
+
+
 # Static Content challenge
 
 **NB: Please do not fork this repository, to avoid your solution being visible from this repository's GitHub page. Please clone this repository and submit your solution as a separate repository.**
