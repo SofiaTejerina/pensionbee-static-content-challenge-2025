@@ -45,8 +45,12 @@ To use SSG to better the SEO and performance, I need a backend to read the folde
 https://nextjs.org/docs/app/guides/testing/jest
 
 ## Style
-- Used Tailwind, is easy to use for a POCs.
+- Used Tailwind + Flowbite, is easy to use for a POCs. https://tailwindcss.com/   https://flowbite.com/
 - Later realize that we could use Flowbite to have already styled beautiful components https://flowbite.com/docs/typography/blockquote/
+
+<img width="1624" alt="Screenshot 2025-05-03 at 8 07 44 PM" src="https://github.com/user-attachments/assets/48da5a56-e12e-45cb-9f27-6c43f157b4ab" />
+<img width="1372" alt="Screenshot 2025-05-03 at 8 08 42 PM" src="https://github.com/user-attachments/assets/3c715135-310a-4cfd-ac81-268520a15c68" />
+
 
 # Static Content challenge
 
