@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-bullet-list li {
+    @apply pl-6 relative list-none text-[15px]; /* Tailwind utilities */
+}
+
+.custom-bullet-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.4em;
+    width: 1rem;
+    height: 1rem;
+    background-image: url("https://www.pensionbee.com/images/yellow-tick.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}

@@ -1,4 +1,5 @@
 import createMDX from '@next/mdx'
+import withFlowbiteReact from "flowbite-react/plugin/nextjs";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,4 +10,4 @@ const withMDX = createMDX({
     extension: /\.(md|mdx)$/,
 })
 
-export default withMDX(nextConfig)
+export default withFlowbiteReact(withMDX(nextConfig))

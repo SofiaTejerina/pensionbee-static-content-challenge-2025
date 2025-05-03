@@ -8,6 +8,8 @@ export default async function Page({
     const path =  (await params).content.join('/')
 
     return (
-        <ClientMDX path={path} />
+        <div className="font-mplus text-[#343a40] max-w-2xl mx-auto text-left py-14">
+            <ClientMDX path={path} />
+        </div>
     )
 }
