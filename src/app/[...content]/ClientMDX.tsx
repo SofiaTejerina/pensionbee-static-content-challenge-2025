@@ -3,9 +3,11 @@
 import React, {lazy, Suspense, useMemo} from 'react'
 import {notFound} from "next/navigation";
 import {loadMDX} from "./mdxLoader";
+import {useMDXComponents} from "../mdx-components";
+import {MDXProvider} from "@mdx-js/react";
 
 export default function ClientMDX({path}: { path: string }) {
-    console.log("Entro el ClientMDX con path:"+ `../../content/${path}/index.md`)
+    const components = useMDXComponents({})
     const Post = useMemo(
         () =>
             lazy(() =>
@@ -15,7 +17,9 @@ export default function ClientMDX({path}: { path: string }) {
     )
     return (
         <Suspense fallback={<div>Loading…</div>}>
-            <Post/>
+            <MDXProvider components={components}>
+                <Post/>
+            </MDXProvider>
         </Suspense>
     )
 
