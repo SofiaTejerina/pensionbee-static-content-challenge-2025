@@ -2,6 +2,14 @@ import React from 'react'
 import {render, screen} from '@testing-library/react'
 import '@testing-library/jest-dom'
 
+jest.mock('next/navigation', () => ({
+    notFound: () =>
+        Promise.resolve({
+            __esModule: true,
+            default: () => <div data-testid="not-found">404 Not Found</div>,
+        }),
+}))
+
 jest.mock(
     '../src/app/[...content]/mdxLoader',
     () => ({
@@ -11,10 +19,7 @@ jest.mock(
                     __esModule: true,
                     default: () => <div data-testid="content">Acme Co.</div>,
                 })
-                : Promise.resolve({
-                    __esModule: true,
-                    default: () => <div data-testid="not-found">404 Not Found</div>,
-                }),
+                : Promise.reject(new Error('MDX_NOT_FOUND')),
     })
 )
 
