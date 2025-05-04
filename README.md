@@ -145,7 +145,7 @@ Uses the provided `template.html`.
 
 Encapsulates dynamic imports to simplify unit testing.
 
-### MDX components
+### mdx-components
 
 Customizes HTML mappings for MDX content.
 

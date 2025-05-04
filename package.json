@@ -18,17 +18,14 @@
     "e2e": "./__tests__/e2e/run-playwright.sh"
   },
   "dependencies": {
-    "@fontsource/m-plus-1p": "^5.2.5",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^14.2.28",
-    "@testing-library/dom": "^10.4.0",
     "next": "^14.2.28",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@playwright/test": "^1.52.0",
     "@tailwindcss/postcss": "^4.1.5",
     "@testing-library/jest-dom": "^6.6.3",
