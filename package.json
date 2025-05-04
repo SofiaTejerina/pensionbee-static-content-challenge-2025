@@ -15,7 +15,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "e2e": "./__tests__/e2e/run-playwright.sh"
+    "e2e": "./__tests__/e2e/run-playwright.sh",
+    "vercel-build": "npm install --omit=dev && next build"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
