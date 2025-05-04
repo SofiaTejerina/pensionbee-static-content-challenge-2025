@@ -99,12 +99,12 @@ We chose Next.js’s MDX plugin, but considered others:
 
 Setup follows the [Next.js testing guide](https://nextjs.org/docs/app/guides/testing/jest).
 
-<img width="1624" alt="Screenshot 2025-05-03 at 8 07 44 PM" src="https://github.com/user-attachments/assets/48da5a56-e12e-45cb-9f27-6c43f157b4ab" />
-<img width="1372" alt="Screenshot 2025-05-03 at 8 08 42 PM" src="https://github.com/user-attachments/assets/3c715135-310a-4cfd-ac81-268520a15c68" />
-
 ## Style
 
 We used **[Tailwind CSS](https://tailwindcss.com/)** and **[Flowbite](https://flowbite.com/)** for rapid, component‑driven styling.
+
+<img width="1624" alt="Screenshot 2025-05-03 at 8 07 44 PM" src="https://github.com/user-attachments/assets/48da5a56-e12e-45cb-9f27-6c43f157b4ab" />
+<img width="1372" alt="Screenshot 2025-05-03 at 8 08 42 PM" src="https://github.com/user-attachments/assets/3c715135-310a-4cfd-ac81-268520a15c68" />
 
 ---
 
