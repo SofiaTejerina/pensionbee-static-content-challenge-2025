@@ -140,6 +140,5 @@ Imports Tailwind’s base, components, and utilities and defines any customizati
 
 ## Future steps
 
-### Use SSG
-
-- Static generation to improves SEO and performance. To do that, implement `generateStaticParams` by reading `src/content` paths.
+### Customize each md file
+Add metadata to customize each markdown file with [Frontmatter](https://nextjs.org/docs/app/guides/mdx#frontmatter)
