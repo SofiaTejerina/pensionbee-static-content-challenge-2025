@@ -1,6 +1,8 @@
-# Static Content challenge
+# Static content challenge
 
-**NB: Please do not fork this repository, to avoid your solution being visible from this repository's GitHub page. Please clone this repository and submit your solution as a separate repository.**
+Visit the project site here.
+
+## About the project
 
 Business Scenario: Acme Co's marketing department want a simple content management system and you've been tasked with building the MVP.
 
@@ -14,24 +16,130 @@ Acme's marketing department should be able to add extra folders to the `content`
 
 This repository contains a `template.html` template file and a sample `content` folder with sub-folders containing `index.md` markdown files (or other sub-folders).
 
-Your application may make use of open-source code libraries and other third-party tools. It is entirely up to you how the application performs the challenge. As the use of LLMs is widespread in software engineering, you are permitted to use AI as you wish.
+## Run the project and tests
+
+Install dependencies:
+
+```shell
+npm install
+```
+
+Run the project:
+
+```shell
+npm run dev
+```
+
+Run the tests:
+
+```shell
+npm run test
+```
+
+## Add more entries
+
+To add more web pages, simply add an `index.md` file under `src/content` inside a folder named for the desired URL.
+
+For example, to serve `acme.com/about-page`, add: "src/content/about-page/index.md"
+
+
+---
+
+## Technologies
+
+### Next.js
+
+Next.js is a framework built on React for developing web applications.
+
+**Why**
+- Easy to set up and develop quickly
+- Built‑in support for [dynamic routes](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes)
+- Familiar to the team
+- Simple Vercel deployment for prototypes
+- Easy to use `template.html` as a layout
+- Includes MDX support (https://nextjs.org/docs/app/guides/mdx)
+
+### TypeScript
+
+- More secure with static type checking
+- Code is easier to read and understand
+
+### MDX
+
+We chose Next.js’s MDX plugin, but considered others:
+
+#### Next.js MDX plugin
+
+- Easiest to set up
+- Minimal code to meet project requirements
+- XSS‑safe, since compilation happens at build time
+
+#### [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx)
+
+- XSS‑safe (no [`dangerouslySetInnerHTML`](https://legacy.reactjs.org/docs/dom-elements.html))
+- Based on the [simple‑markdown](https://www.npmjs.com/package/@khanacademy/simple-markdown) library
+- Clear documentation
+- Lightweight, widely used (>3M weekly downloads)
+
+#### [react-markdown](https://www.npmjs.com/package/react-markdown)
+
+- Similar to markdown‑to‑jsx
+- Even lighter, with >4M weekly downloads
+- Documentation can be harder to navigate
+- Offers features beyond our needs, adding complexity
+
+---
 
 ## Testing
 
-The application should be shipped with at minimum three tests, although your testing strategy should effectively test your application:
+- **[Jest](https://jestjs.io/)**
+    - Popular test framework; well supported in React tutorials
+- **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)**
+    - Standard for testing React components alongside Jest
 
-- one that verifies that requests to valid URLs return a 200 HTTP status code
-- one that verifies that requests to valid URLs return a body that contains the HTML generated from the relevant `index.md` markdown file
-- one that verifies that requests to URLs that do not match content folders return a 404 HTTP status code
-- NB: the tests should not depend on the existing sub-folders in the `content` folder, so the tests do not break as the content changes
+Setup follows the [Next.js testing guide](https://nextjs.org/docs/app/guides/testing/jest).
 
-## Bonus credit
+## Style
 
-**NB: This is only relevant if completing this task in your own time, i.e. NOT in a pairing interview**
+We used **[Tailwind CSS](https://tailwindcss.com/)** and **[Flowbite](https://flowbite.com/)** for rapid, component‑driven styling.
 
-In this MVP sprint, there are several opportunities to deliver nice-to-have tickets. The marketing team recognise that in a post-LLM world sprint velocity may be higher.
+<img width="1624" alt="Screenshot 2025-05-03 at 8 07 44 PM" src="https://github.com/user-attachments/assets/48da5a56-e12e-45cb-9f27-6c43f157b4ab" />
+<img width="1372" alt="Screenshot 2025-05-03 at 8 08 42 PM" src="https://github.com/user-attachments/assets/3c715135-310a-4cfd-ac81-268520a15c68" />
 
-- The generated HTML page should be styled in a pleasing way
-- The MVP's GitHub repository should be configured for hosting on a cloud hosting service, and include a link to a live deployment
-- The repository should include documentation describing how to both use the application and how to iterate it from here
-- Overall, you should do everything you think is necessary to make this application MVP production-ready
+---
+
+## Deployment
+
+We chose **[Vercel](https://vercel.com/docs)** for easy Next.js integration and fast prototype delivery.
+
+---
+
+## Implementation
+
+### Layout
+
+Uses the provided `template.html`.
+
+### Components
+
+**ClientMDX**: a client component that dynamically loads and renders MDX content. This component is client because the mdx package use hooks like useContext to generate the React component.
+
+### mdxLoader
+
+Encapsulates dynamic imports to simplify unit testing.
+
+### MDX components
+
+Customizes HTML mappings for MDX content.
+
+### globals.css
+
+Imports Tailwind’s base, components, and utilities and defines any customizations.
+
+---
+
+## Future steps
+
+### Use SSG
+
+- Static generation to improves SEO and performance. To do that, implement `generateStaticParams` by reading `src/content` paths.
