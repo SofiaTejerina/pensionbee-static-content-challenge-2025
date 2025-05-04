@@ -2,6 +2,19 @@ import React from 'react'
 import {render, screen} from '@testing-library/react'
 import '@testing-library/jest-dom'
 
+jest.mock('@mdx-js/react', () => ({
+    MDXProvider: ({ children }: { children: React.ReactNode }) => (
+        <>{children}</>
+    ),
+}))
+
+jest.mock(
+    '../../src/app/mdx-components',
+    () => ({
+        useMDXComponents: () => ({}), // return an empty components map
+    })
+)
+
 jest.mock('next/navigation', () => ({
     notFound: () =>
         Promise.resolve({
@@ -11,10 +24,10 @@ jest.mock('next/navigation', () => ({
 }))
 
 jest.mock(
-    '../src/app/[...content]/mdxLoader',
+    '../../src/app/[...content]/mdxLoader',
     () => ({
         loadMDX: (path: string) =>
-            path === 'about-page'
+            path === '/about-page'
                 ? Promise.resolve({
                     __esModule: true,
                     default: () => <div data-testid="content">Acme Co.</div>,
@@ -23,7 +36,7 @@ jest.mock(
     })
 )
 
-import Page from '../src/app/[...content]/page'
+import Page from '../../src/app/[...content]/page'
 
 describe('Dynamic MDX Page', () => {
     it('renders “Acme Co.” when the MDX exists', async () => {
