@@ -5,11 +5,11 @@ export default async function Page({
                                    }: {
     params: Promise<{ content: string[] }>
 }) {
-    const path =  (await params).content.join('/')
+    const path = (await params).content.join('/')
 
     return (
         <div className="font-mplus text-[#343a40] max-w-2xl mx-auto text-left py-14">
-            <ClientMDX path={path} />
+            <ClientMDX path={`/${path}`} />
         </div>
     )
 }

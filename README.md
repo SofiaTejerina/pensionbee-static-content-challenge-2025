@@ -122,7 +122,7 @@ Uses the provided `template.html`.
 
 ### Components
 
-- **ClientMDX**: a client component that dynamically loads and renders MDX content. This component is client because the mdx package use hooks like useContext to generate the React component.
+**ClientMDX**: a client component that dynamically loads and renders MDX content. This component is client because the mdx package use hooks like useContext to generate the React component.
 
 ### mdxLoader
 
