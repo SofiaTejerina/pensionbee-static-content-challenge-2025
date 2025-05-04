@@ -13,10 +13,9 @@ test.describe('Content routes', () => {
 
     test('valid URL returns 200 and contains fixture HTML', async ({ request }) => {
         // Hit the preview server on port 3001
-        const response = await request.get('http://localhost:3001/about-page')
-        expect(response.status()).toBe(200)
-        const body = await response.text()
-        expect(body).toContain('Acme')
+        const r = await request.get('http://localhost:3001/test-page')
+        expect(r.status()).toBe(200)
+        expect(await r.text()).toContain('Hello from fixtures')
     })
 
     test('invalid URL returns 200 but show 404 error', async ({ request }) => {

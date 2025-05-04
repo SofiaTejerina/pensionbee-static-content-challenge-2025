@@ -15,7 +15,11 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "preview:test": "next build && next start -p 3001"
+    "prebuild:fixtures": "rm -rf content/test-page && mkdir -p content && cp -R tests/fixtures/content/* content/",
+    "build:fixtures": "npm run prebuild:fixtures && next build",
+    "preview:fixtures": "npm run build:fixtures && next start -p 3001",
+    "preview:test": "next build && next start -p 3001",
+    "test:e2e": "playwright tests"
   },
   "dependencies": {
     "@fontsource/m-plus-1p": "^5.2.5",
