@@ -1,23 +1,23 @@
 import ClientMDX from "./ClientMDX";
-import {getAllSlugs} from "../../lib/getContentSlug";
+import { getAllSlugs } from "../../lib/getContentSlug";
 
 export default async function Page({
-                                       params,
-                                   }: {
-    params: Promise<{ content: string[] }>
+  params,
+}: {
+  params: Promise<{ content: string[] }>;
 }) {
-    const path = (await params).content.join('/')
+  const path = (await params).content.join("/");
 
-    return (
-        <div className="font-mplus text-[#343a40] max-w-2xl mx-auto text-left py-14">
-            <ClientMDX path={`/${path}`} />
-        </div>
-    )
+  return (
+    <div className="mx-auto max-w-2xl py-14 text-left font-mplus text-[#343a40]">
+      <ClientMDX path={`/${path}`} />
+    </div>
+  );
 }
 
 export async function generateStaticParams() {
-    const slugs = await getAllSlugs();
-    return slugs.map((slug) => ({
-        content: slug.split("/"),
-    }));
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({
+    content: slug.split("/"),
+  }));
 }
