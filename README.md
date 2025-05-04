@@ -18,114 +18,128 @@ This repository contains a `template.html` template file and a sample `content` 
 
 ## Run the project and tests
 
-To run the project you must install the dependencies:
+Install dependencies:
 
 ```shell
 npm install
 ```
 
-Then run the project:
+Run the project:
+
 ```shell
 npm run dev
 ```
 
-And to run the tests:
+Run the tests:
+
 ```shell
 npm run test
 ```
 
 ## Add more entries
-To have more web entries you just need to add you markdown file named `index.md` into the  `src/content` folder.
 
-The file must be inside folders with the name of the url you want for that page.
+To add more web pages, simply add an `index.md` file under `src/content` inside a folder named for the desired URL.
 
-For example, if you want to show a page in `acme.com/about-page` you should save that markdown file inside a folder named "about-page".
+For example, to serve `acme.com/about-page`, add: "src/content/about-page/index.md"
+
+
+---
 
 ## Technologies
 
-### NextJS
+### Next.js
 
-NextJS is a framework build to use with React to develop web applications.
+Next.js is a framework built on React for developing web applications.
 
-#### Why
-
-Here is a list why I choose this framework:
-- Easy to set up and start developing fast.
-- Easy to work with [dynamic routes](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes).
-- More experience with.
-- Easy deploy with vercel for POCs.
-- Use the template as layout easily.
-- Contains a mdx (https://mdxjs.com/) package (https://nextjs.org/docs/app/guides/mdx) to get React components from markdown files.
-
+**Why**
+- Easy to set up and develop quickly
+- Built‑in support for [dynamic routes](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes)
+- Familiar to the team
+- Simple Vercel deployment for prototypes
+- Easy to use `template.html` as a layout
+- Includes MDX support (https://nextjs.org/docs/app/guides/mdx)
 
 ### TypeScript
-- More secure because of type validation.
-- Make code easier to read and to understand.
+
+- More secure with static type checking
+- Code is easier to read and understand
 
 ### MDX
-Even if I finally chose the mdx package from NextJS I also have in mind other libraries that do the same.
 
-**[MDX Plugin of NextJS](https://nextjs.org/docs/app/guides/mdx#using-dynamic-imports)**
-- The most easy to set up and use.
-- Less code needed to complete the requirements of the project.
-- Secure to XSS attacks because the transformation to JavaScript is done on build time.
+We chose Next.js’s MDX plugin, but considered others:
 
-**[Markdown to JSX](https://www.npmjs.com/package/markdown-to-jsx)**
-- secure of XSS (cross side scripting) (not dangerouslySetInnerHTML https://legacy.reactjs.org/docs/dom-elements.html).
-- based on simple markdown, other open source project (https://www.npmjs.com/package/@khanacademy/simple-markdown).
-- complete and easy to read documentation.
-- easy to use.
-- light and trustable with lot weekly downloads (>3M) (more community using it, more trouble shooting and support you will find).
+#### Next.js MDX plugin
 
-**[React Markdown](https://www.npmjs.com/package/react-markdown)**
-- Similar than Markdown to JSX.
-- Lighter than Markdown to JSX and with more downloads (>4M).
-- Documentation hard to read.
-- Has more customizations that aren't necessary here, so just add complex to the POC.
+- Easiest to set up
+- Minimal code to meet project requirements
+- XSS‑safe, since compilation happens at build time
 
-### Testing
-**[Jest](https://jestjs.io/)**
-I used Jest as a test framework. Because I found that all the blogs I read to do the tests use jest. Also, my only experience doing test on React was using jest.
+#### [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx)
 
-**[React testing library](https://testing-library.com/docs/react-testing-library/intro/)**
-To use with Jest to test React components, in the blogs and documentations is allways used with Jest.
+- XSS‑safe (no [`dangerouslySetInnerHTML`](https://legacy.reactjs.org/docs/dom-elements.html))
+- Based on the [simple‑markdown](https://www.npmjs.com/package/@khanacademy/simple-markdown) library
+- Clear documentation
+- Lightweight, widely used (>3M weekly downloads)
 
-### Setup:
-To set up the tests environment I followed the [NextJS documentation](https://nextjs.org/docs/app/guides/testing/jest).
+#### [react-markdown](https://www.npmjs.com/package/react-markdown)
 
-### Style
-To add style to the web application I used [Tailwind](https://tailwindcss.com/) and [Flowbite](https://flowbite.com/), they are easy to use and fast to learn for a POCs.
+- Similar to markdown‑to‑jsx
+- Even lighter, with >4M weekly downloads
+- Documentation can be harder to navigate
+- Offers features beyond our needs, adding complexity
 
-Here is an example of the results of styling the components obtain from the markdown.
+---
+
+## Testing
+
+- **[Jest](https://jestjs.io/)**
+    - Popular test framework; well supported in React tutorials
+- **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)**
+    - Standard for testing React components alongside Jest
+
+Setup follows the [Next.js testing guide](https://nextjs.org/docs/app/guides/testing/jest).
 
 <img width="1624" alt="Screenshot 2025-05-03 at 8 07 44 PM" src="https://github.com/user-attachments/assets/48da5a56-e12e-45cb-9f27-6c43f157b4ab" />
 <img width="1372" alt="Screenshot 2025-05-03 at 8 08 42 PM" src="https://github.com/user-attachments/assets/3c715135-310a-4cfd-ac81-268520a15c68" />
 
+## Style
 
-### Deployment
-I chose [Vercel](https://vercel.com/docs) to do the deployment because of the easy integration with NextJS. In just minutes your project could be delivered, which is the important part of the POC.
+We used **[Tailwind CSS](https://tailwindcss.com/)** and **[Flowbite](https://flowbite.com/)** for rapid, component‑driven styling.
+
+---
+
+## Deployment
+
+We chose **[Vercel](https://vercel.com/docs)** for easy Next.js integration and fast prototype delivery.
+
+---
 
 ## Implementation
 
 ### Layout
-Has the template provided for the challenge.
+
+Uses the provided `template.html`.
 
 ### Components
-**ClientMDX:** to isolate the client component, this component is client because the mdx package use hooks like useContext to generate the React component from the markdown.
+
+- **ClientMDX**: a client component that dynamically loads and renders MDX content. This component is client because the mdx package use hooks like useContext to generate the React component.
 
 ### mdxLoader
-Put the logic to import dynamically the component isolate to make easier to mock for the unit tests.
 
-### mdx components
-Here I defined the customizations in the html components used to create the React Component based on the markdown file.
-Is necessary to use the MDX package of NextJS.
+Encapsulates dynamic imports to simplify unit testing.
 
-### Globals css
-Here I defined customizations in css and import tailwind packages to use it on the code.
+### MDX components
+
+Customizes HTML mappings for MDX content.
+
+### globals.css
+
+Imports Tailwind’s base, components, and utilities and defines any customizations.
+
+---
 
 ## Future steps
 
 ### Use SSG
-- SSR and SSG is perfect for the requirements of the project and better for the SEO.
-- To use SSG, I need a backend to read the folders and return all the posible paths, with that create the `generateStaticParams`.
 
+- Static generation to improves SEO and performance. To do that, implement `generateStaticParams` by reading `src/content` paths.
