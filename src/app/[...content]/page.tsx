@@ -1,4 +1,5 @@
 import ClientMDX from "./ClientMDX";
+import {getAllSlugs} from "../../lib/getContentSlug";
 
 export default async function Page({
                                        params,
@@ -12,4 +13,11 @@ export default async function Page({
             <ClientMDX path={`/${path}`} />
         </div>
     )
+}
+
+export async function generateStaticParams() {
+    const slugs = await getAllSlugs();
+    return slugs.map((slug) => ({
+        content: slug.split("/"),
+    }));
 }
