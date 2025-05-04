@@ -34,6 +34,7 @@ Run the tests:
 
 ```shell
 npm run test
+npm run e2e
 ```
 
 ## Add more entries
@@ -92,12 +93,28 @@ We chose Next.js’s MDX plugin, but considered others:
 
 ## Testing
 
+
+### Unit testing
+
 - **[Jest](https://jestjs.io/)**
     - Popular test framework; well supported in React tutorials
 - **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)**
     - Standard for testing React components alongside Jest
 
 Setup follows the [Next.js testing guide](https://nextjs.org/docs/app/guides/testing/jest).
+
+### e2e testing
+**[Playwright](https://nextjs.org/docs/pages/guides/testing/playwright?utm_source=chatgpt.com)**
+
+A modern testing framework that supports automation across Chromium, Firefox, and WebKit.
+
+**Content Isolation for Testing:**
+
+Since the site uses static generation at build time, we need to ensure test content doesn't interfere with production content.
+To achieve this, we use a script that: 
+  - Copies test content into the content directory. 
+  - Builds the project and runs tests. 
+  - Removes the test content after tests complete.
 
 ## Style
 
