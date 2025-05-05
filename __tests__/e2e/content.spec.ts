@@ -11,9 +11,7 @@ test.describe("Content routes", () => {
     expect(response.status()).toBe(200);
   });
 
-  test("valid URL returns 200 and contains fixture HTML", async ({
-    request,
-  }) => {
+  test("valid URL returns 200 and contains fixture HTML", async ({ request }) => {
     // Hit the preview server on port 3001
     const r = await request.get("http://localhost:3001/test-page");
     expect(r.status()).toBe(200);

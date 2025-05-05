@@ -1,6 +1,6 @@
 # Static content challenge
 
-Visit the project site here.
+Visit the project site [here](https://static-content-challenge-2025-seven.vercel.app/about-page).
 
 ## About the project
 
