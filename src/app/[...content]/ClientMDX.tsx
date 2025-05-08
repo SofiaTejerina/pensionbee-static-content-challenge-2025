@@ -6,7 +6,7 @@ import { loadMDX } from "./mdxLoader";
 import { useMDXComponents } from "../mdx-components";
 import { MDXProvider } from "@mdx-js/react";
 
-// have a separated component because catch all dynamic segments should be in a server component while mdx nextJS package should be used in a client component
+// separated into a client component because catch-all dynamic segments must be handled in a server component, while the MDX Next.js package requires a client component
 export default function ClientMDX({ path }: { path: string }) {
   const components = useMDXComponents({});
   const Post = useMemo(() => lazy(() => loadMDX(path).catch(() => notFound())), [path]);

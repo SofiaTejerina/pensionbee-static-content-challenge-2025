@@ -41,7 +41,7 @@ npm run e2e
 
 To add more web pages, simply add an `index.md` file under `src/content` inside a folder named for the desired URL.
 
-For example, to serve `acme.com/about-page`, add: "src/content/about-page/index.md"
+For example, to serve `acme.com/about-page`, add: "/content/about-page/index.md"
 
 
 ---
@@ -118,7 +118,7 @@ To achieve this, we use a script that:
 
 ## Style
 
-We used **[Tailwind CSS](https://tailwindcss.com/)** and **[Flowbite](https://flowbite.com/)** for rapid, component‑driven styling.
+We used **[Tailwind CSS](https://tailwindcss.com/)** for rapid, component‑driven styling, and making the site responsive.
 
 <img width="1624" alt="Screenshot 2025-05-03 at 8 07 44 PM" src="https://github.com/user-attachments/assets/48da5a56-e12e-45cb-9f27-6c43f157b4ab" />
 <img width="1372" alt="Screenshot 2025-05-03 at 8 08 42 PM" src="https://github.com/user-attachments/assets/3c715135-310a-4cfd-ac81-268520a15c68" />
